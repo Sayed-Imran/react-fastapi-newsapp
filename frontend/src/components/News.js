@@ -23,7 +23,7 @@ export class News extends Component {
         }
     }
     async componentDidMount() {
-        let url = `http://3.110.155.108:9090/?country=${this.props.country}&category=${this.props.category}&page=1&pageSize=${this.props.pageSize}`
+        let url = `http://3.109.157.35:9090/?country=${this.props.country}&category=${this.props.category}&page=1&pageSize=${this.props.pageSize}`
         this.setState({loading:true})
         let data = await fetch(url)
         let parsedData = await data.json()
@@ -36,7 +36,7 @@ export class News extends Component {
     handleNext = async () => {
 
         if (!(this.state.page + 1 > Math.ceil(this.state.totalCount / this.props.pageSize))) { 
-            let url = `http://3.110.155.108:9090/?country=${this.props.country}&category=${this.props.category}&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`
+            let url = `http://3.109.157.35:9090/?country=${this.props.country}&category=${this.props.category}&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`
             this.setState({loading:true})
             let data = await fetch(url)
             let parsedData = await data.json()
@@ -48,7 +48,7 @@ export class News extends Component {
         }
     }
     handlePrevious = async () => {
-        let url = `http://3.110.155.108:9090/?country=${this.props.country}&category=${this.props.category}&page=${this.state.page - 1}&pagesize=${this.props.pageSize}`
+        let url = `http://3.109.157.35:9090/?country=${this.props.country}&category=${this.props.category}&page=${this.state.page - 1}&pagesize=${this.props.pageSize}`
         this.setState({loading:true})
         let data = await fetch(url)
         let parsedData = await data.json()
