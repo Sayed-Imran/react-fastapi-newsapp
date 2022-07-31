@@ -20,7 +20,7 @@ app.add_middleware(
 @app.get("/", status_code=status.HTTP_200_OK)
 def getNews(country,category,page,pageSize):
     # all_articles = newsapi.get_top_headlines(country=country,category=category,page=page,page_size=pageSize)
-    data = requests.get(f"https://newsapi.org/v2/top-headlines?country={country}&category={category}&apiKey=c5c67d04c2b04d97970b376930f84180&page={page}&pageSize={pageSize}").text
+    data = requests.get(f"https://newsapi.org/v2/top-headlines?country={country}&category={category}&apiKey=<GET_YOUR_API_KEY>&page={page}&pageSize={pageSize}").text
     print("DATA:",data)
     # print("ARTICLES:",all_articles)
     return json.loads(data)
